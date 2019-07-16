@@ -55,6 +55,9 @@ Crie um link simbólico:
 
 ---
 ### Referências
+
 Mazon Os -> http://mazonos.com/
+
 bananapkg -> https://bananapkg.github.io/
+
 GnuPg -> https://gnupg.org/
