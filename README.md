@@ -36,17 +36,12 @@ No terminal utilize o usuário root:
 
 Faça o download :
 
-```# wget -O /usr/bin/mz https://raw.githubusercontent.com/Viniciusalopes/install-gpgkey/master/install-gpgkey.sh```
+```# wget -O /usr/bin/install-gpgkey https://raw.githubusercontent.com/Viniciusalopes/install-gpgkey/master/install-gpgkey.sh```
 
 
 Conceda as permissões de execução:
 
-```# chmod + x /usr/bin/install-gpgkey.sh```
-
-
-Crie um link simbólico:
-
-```# ln -s /usr/bin/install-gpgkey.sh /usr/bin/install-gpgkey```
+```# chmod +x /usr/bin/install-gpgkey```
 
 ---
 ### Referências
