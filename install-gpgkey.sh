@@ -5,7 +5,7 @@
 #  Vovolinux <suporte@vovolinux.com.br>
 #
 ##DATA-DE-CRIAÇÃO
-#  16/07/2019 ás 14:19 
+#  16/07/2019 ás 14:19
 #
 #PROGRAMA
 #  install-gpgkey
@@ -17,7 +17,7 @@
 #  MIT
 #
 #HOMEPAGE
-#  https://github.com/Viniciusalopes/install-gpgkey 
+#  https://github.com/Viniciusalopes/install-gpgkey
 #
 #CHANGELOG
 #
@@ -52,16 +52,16 @@ msg_ate_breve='OK.\nAté breve!'
 #--------FUNÇÕES----------->
 ajuda(){
 cat << EOF
- 
+
  INSTRUÇÕES:
-    
+
     install-gpgkey <local-da-chave>/<arquivo.key>
         -> Importa uma chave privada gpg.
 
-    install-gpgkey -h 
+    install-gpgkey -h
     install-gpgkey --help
         -> Ver esta ajuda.
-  
+
 EOF
 
 }
@@ -76,7 +76,7 @@ check()
     if [[ ! -e "$chave" ]]; then
         echo -e "${msg_arquivo_invalido} (${chave})"
         ajuda
-        exit 1 
+        exit 1
     fi
 
     # Verificando se o diretório existe
@@ -89,6 +89,8 @@ check()
              s|S) certeza ;;
             *) sair  ;;
         esac
+    else
+        instalar
     fi
 }
 
@@ -118,9 +120,9 @@ instalar()
     echo -e 'Então tá. E lá vamos nós...'
     rm -rfv $dir_gpg/*
     if ! [[ -d "${dir_gpg}" ]]; then 
-        mkdir -v /root/.gnupg      # cria o dir_gpg
+        mkdir -v "${dir_gpg}"      # cria o dir_gpg
     fi
-    
+
    # Instala
     echo 'Criando o arquivo '
     echo 'pinentry-mode loopback' >> ${dir_gpg}/gpg.conf
@@ -139,15 +141,14 @@ sair()
 # Programa começa aqui :)
 
 case $1 in
-    -h|--help) 
-        ajuda 
+    -h|--help)
+        ajuda
         exit 0
     ;;
-    
+
     *)
         chave="${1}"
         check
-        inicius
     ;;
 esac
 exit 0
