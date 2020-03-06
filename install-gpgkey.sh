@@ -83,7 +83,7 @@ check()
     if [[ -d "${dir_gpg}" ]]; then 
         #dir_gpg já existe
         echo -e "${msg_dir_existe}"
-        read -ep "Deseja REALMENTE excluir TODOS os arquivos em '${dir_gpg}' ? [s/N ]: " -n 1
+        read -ep "Deseja REALMENTE excluir TODOS os arquivos em '${dir_gpg}' ? [s/N]: " -n 1
 
         case "$REPLY" in
              s|S) certeza ;;
@@ -96,7 +96,7 @@ check()
 
 certeza()
 {
-    read -ep "Você tem CERTEZA ? [s/N ]: " -n 1
+    read -ep "Você tem CERTEZA ? [s/N]: " -n 1
 
     case "$REPLY" in
         s|S) absoluta ;;
@@ -106,7 +106,7 @@ certeza()
 
 absoluta()
 {
-    read -ep "Você tem certeza ABSOLUTA ? [s/N ]: " -n 1
+    read -ep "Você tem certeza ABSOLUTA ? [s/N]: " -n 1
 
     case "$REPLY" in
         s|S) instalar ;;
